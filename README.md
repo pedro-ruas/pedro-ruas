@@ -1,10 +1,10 @@
 ### Hello! Olá! Hallo! ¡Hola! Ciao! Welcome to my Github!
 <div align="center">
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img align="center" height="180em" src="https://github-readme-stats.vercel.app/api?username=PJRuas&count_private=true&include_all_commits=true&show_icons=true&theme=discord_old_blurple&title_color=487fc7ff&icon_color=487fc7ff&hide_border=false&border_radius=7px&border_color=487fc7ff&custom_title=My+Github+Status" />
+    <img align="center" height="180em" src="https://github-readme-stats.vercel.app/api?username=pedro-ruas&count_private=true&include_all_commits=true&show_icons=true&theme=discord_old_blurple&title_color=487fc7ff&icon_color=487fc7ff&hide_border=false&border_radius=7px&border_color=487fc7ff&custom_title=My+Github+Status" />
   </a>
   <a href="https://github.com/anuraghazra/convoychat">
-    <img align="center" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PJRuas&theme=discord_old_blurple&hide_border=false&border_radius=7px&border_color=487fc7ff&title_color=487fc7ff&layout=compact" />
+    <img align="center" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=pedro-ruas&theme=discord_old_blurple&hide_border=false&border_radius=7px&border_color=487fc7ff&title_color=487fc7ff&layout=compact" />
   </a>
 </div>
 
