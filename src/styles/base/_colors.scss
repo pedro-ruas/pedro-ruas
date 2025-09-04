@@ -1,0 +1,83 @@
+// intent colors
+$colors-green: #27ae60;
+$colors-red: #eb5757;
+
+// light theme
+$colors-main: #4219d0;
+$colors-main-secondary: #f4ba47;
+
+// dark theme
+$colors-main-dark: #905bff;
+
+// ------------------------------------ //
+
+// neutral colors
+$colors-shadow: #17203166;
+
+//light theme
+$colors-white-light-1: #ffffff;
+$colors-white-light-2: #fafbfc;
+$colors-gray-light-1: #e2e6e9;
+$colors-gray-light-2: #b4bdc3;
+$colors-gray-light-3: #89939a;
+$colors-black-light: #0f0f11;
+
+// dark theme
+$colors-white-dark: #f1f2f9;
+$colors-gray-dark-1: #75767f;
+$colors-gray-dark-2: #4a4d58;
+$colors-gray-dark-3: #3b3e4a;
+$colors-gray-dark-4: #323542;
+$colors-gray-dark-5: #161827;
+$colors-black-dark: #0f1121;
+
+// ------------------------------------ //
+
+:root {
+  // light theme scheme
+  --colors-accent: #{$colors-main};
+  --colors-accent-secondary: #{$colors-main-secondary};
+  --colors-success: #{$colors-green};
+  --colors-danger: #{$colors-red};
+  --colors-primary: #{$colors-black-light};
+  --colors-secondary: #{$colors-gray-light-3};
+  --colors-icons: #{$colors-gray-light-2};
+  --colors-elements: #{$colors-gray-light-1};
+  --colors-hover_pg-bg: #{$colors-white-light-2};
+  --colors-surface_bg: #{$colors-white-light-1};
+  --colors-surface_bg-2: #{$colors-white-light-1};
+  --colors-primary-reverse: #{$colors-white-light-1};
+  --colors-overlay_bg: #{$colors-black-light};
+
+  // dark theme scheme
+  &[data-theme="dark-theme"] {
+    --colors-accent: #{$colors-main-dark};
+    --colors-accent-secondary: #{$colors-red};
+    --colors-primary: #{$colors-white-dark};
+    --colors-secondary: #{$colors-gray-dark-1};
+    --colors-icons: #{$colors-gray-dark-2};
+    --colors-elements: #{$colors-gray-dark-3};
+    --colors-hover_pg-bg: #{$colors-black-dark};
+    --colors-surface_bg: #{$colors-gray-dark-5};
+    --colors-surface_bg-2: #{$colors-gray-dark-4};
+    --colors-primary-reverse: #{$colors-black-dark};
+    --colors-overlay_bg: #{$colors-black-light};
+  }
+}
+
+// ------------------------------------ //
+
+// usage colors
+$colors-accent: var(--colors-accent);
+$colors-accent-secondary: var(--colors-accent-secondary);
+$colors-success: var(--colors-success);
+$colors-danger: var(--colors-danger);
+$colors-primary: var(--colors-primary);
+$colors-secondary: var(--colors-secondary);
+$colors-icons: var(--colors-icons);
+$colors-elements: var(--colors-elements);
+$colors-hover_pg-bg: var(--colors-hover_pg-bg);
+$colors-surface_bg: var(--colors-surface_bg);
+$colors-surface_bg-2: var(--colors-surface_bg-2);
+$colors-primary-reverse: var(--colors-primary-reverse);
+$colors-overlay_bg: var(--colors-overlay_bg);

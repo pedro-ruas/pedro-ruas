@@ -1,0 +1,59 @@
+.Header {
+  display: flex;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  background: black;
+  box-shadow: 0 1.5rem 2rem black;
+  z-index: 10;
+
+  &_Wrapper {
+    width: 100%;
+    justify-content: space-between;
+    max-width: theme.$page-max-width;
+    padding: 0 2 * theme.$default-gap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &_Nav {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    gap: 3 * theme.$default-gap;
+  }
+
+  &_NavItem {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: background 300ms ease-in-out;
+    border-radius: 1rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+    @extend %h4-text;
+
+    &::after {
+      position: absolute;
+      bottom: 25%;
+      content: "";
+      background-color: white;
+      transition: theme.$default-transition;
+      height: 4px;
+      padding: 0 0;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      &::after {
+        padding: 0 45%;
+      }
+    }
+  }
+}

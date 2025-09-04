@@ -1,0 +1,13 @@
+@use "./variables" as variables;
+
+@keyframes skeleton-glow {
+  from {
+    background: variables.$skeleton-color-start;
+    border-color: variables.$skeleton-color-start;
+  }
+
+  to {
+    background: variables.$skeleton-color-end;
+    border-color: variables.$skeleton-color-end;
+  }
+}

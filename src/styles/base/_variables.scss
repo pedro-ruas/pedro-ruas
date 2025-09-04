@@ -1,0 +1,19 @@
+@use "./colors" as colors;
+
+$default-shadow: 0px 3px 13px 0px colors.$colors-shadow;
+$default-border: 1px solid colors.$colors-elements;
+$default-gap: 1rem;
+$default-transition: all 300ms ease-in-out;
+
+$page-max-width: 1400px;
+
+$input-height: 40px;
+$input-height-small: 32px;
+$input-height-large: 48px;
+$header-height: 80px;
+
+$icon-height: 75px;
+$icon-height-mobile: 40px;
+
+$skeleton-color-start: rgba(colors.$colors-gray-light-2, 0.2) !default;
+$skeleton-color-end: rgba(colors.$colors-gray-dark-3, 0.2) !default;

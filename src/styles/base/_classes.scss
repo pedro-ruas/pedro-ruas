@@ -1,0 +1,27 @@
+@use "./variables" as variables;
+
+%skeleton {
+  animation: 1s linear infinite alternate skeleton-glow;
+
+  background: variables.$skeleton-color-start;
+
+  background-clip: padding-box !important;
+  border-color: variables.$skeleton-color-start !important;
+  border-radius: 2px;
+  box-shadow: none !important;
+
+  color: transparent !important;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+
+  &::before,
+  &::after,
+  * {
+    visibility: hidden !important;
+  }
+}
+
+.Loading {
+  @extend %skeleton;
+}
