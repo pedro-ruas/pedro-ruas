@@ -3,6 +3,7 @@ import { initReactI18next } from "react-i18next";
 import { Languages, type Translation } from "./types/translation.type";
 import { headerTranslation } from "./components/Header/Header.i18n";
 import { heroTranslation } from "./components/Hero/Hero.i18n";
+import { aboutTranslation } from "./components/About/About.i18n";
 
 function getResources(...translations: Translation[]): Resource {
   const initialResources = Object.values(Languages).reduce(
@@ -30,12 +31,16 @@ function getResources(...translations: Translation[]): Resource {
   );
 }
 
-const resources = getResources(headerTranslation, heroTranslation);
+const resources = getResources(
+  headerTranslation,
+  heroTranslation,
+  aboutTranslation
+);
 
 i18next.use(initReactI18next).init({
   debug: true,
   fallbackLng: "en",
-  resources
+  resources,
 });
 
 export default i18next;

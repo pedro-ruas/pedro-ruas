@@ -99,7 +99,7 @@ $picture-size: 700px;
 
     @include theme.desktop {
       flex-direction: row;
-      padding: 12 * theme.$default-gap 0;
+      padding: 12 * theme.$default-spacing 0;
     }
   }
 
@@ -114,10 +114,10 @@ $picture-size: 700px;
 
     &Wrapper {
       position: relative;
-      padding: theme.$default-gap 0;
+      padding: theme.$default-spacing 0;
       display: flex;
       align-items: center;
-      gap: theme.$default-gap;
+      gap: theme.$default-spacing;
       justify-content: center;
       transition: theme.$default-transition;
       z-index: 30;
@@ -126,8 +126,8 @@ $picture-size: 700px;
       @include theme.desktop {
         align-items: flex-end;
         flex-direction: column;
-        padding: calc(2 * theme.$default-gap);
-        gap: calc(3 * theme.$default-gap);
+        padding: calc(2 * theme.$default-spacing);
+        gap: calc(3 * theme.$default-spacing);
         top: unset;
       }
 
@@ -243,7 +243,7 @@ $picture-size: 700px;
 
     &Text {
       width: 100%;
-      padding: 2 * theme.$default-gap 8 * theme.$default-gap;
+      padding: 2 * theme.$default-spacing 8 * theme.$default-spacing;
       animation-timing-function: ease-in-out;
       animation-duration: 1.5s;
       animation-iteration-count: 1;

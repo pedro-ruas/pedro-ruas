@@ -1,5 +1,12 @@
 @use "./variables" as variables;
 
+@mixin animation($name) {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-name: $name;
+}
+
 @keyframes skeleton-glow {
   from {
     background: variables.$skeleton-color-start;
@@ -9,5 +16,29 @@
   to {
     background: variables.$skeleton-color-end;
     border-color: variables.$skeleton-color-end;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

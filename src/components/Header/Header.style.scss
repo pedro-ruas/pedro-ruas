@@ -12,7 +12,7 @@
     width: 100%;
     justify-content: space-between;
     max-width: theme.$page-max-width;
-    padding: 0 2 * theme.$default-gap;
+    padding: 0 2 * theme.$default-spacing;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     height: 5rem;
-    gap: 3 * theme.$default-gap;
+    gap: 3 * theme.$default-spacing;
   }
 
   &_NavItem {

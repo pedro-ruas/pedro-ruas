@@ -1,3 +1,162 @@
+@keyframes picture {
+  from {
+    transform: translate(10%, 10%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(10, 10);
+    opacity: 1;
+  }
+}
+
 .About {
-  
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: theme.$colors-surface-bg;
+  box-shadow: 0 -1rem 1rem theme.$colors-surface-bg;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  &_Content {
+    width: 100%;
+    height: 100vh;
+    max-width: theme.$page-max-width;
+    padding: theme.$default-spacing;
+    gap: calc(3 * theme.$default-spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+
+    @include theme.tablet {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    @include theme.desktop {
+      flex-direction: row;
+      padding: calc(3 * theme.$default-spacing) 0;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  &_Texts {
+    display: flex;
+    flex-direction: column;
+    gap: calc(3 * theme.$default-spacing);
+  }
+
+  &_Title {
+    @extend %h2-text;
+  }
+
+  &_Text {
+    @extend %body-text;
+    display: flex;
+    flex-direction: column;
+    gap: theme.$default-spacing;
+    z-index: 20;
+  }
+
+  &_Stack {
+    display: flex;
+    flex-direction: column;
+    gap: calc(2 * theme.$default-spacing);
+
+    &Title {
+      @extend %h4-text;
+    }
+
+    &Text {
+      @extend %body-text;
+    }
+
+    &Group {
+      display: flex;
+      flex-direction: column;
+      gap: theme.$default-spacing;
+      border: theme.$default-border;
+      border-radius: 2rem;
+      padding: calc(1.5 * theme.$default-spacing);
+      transition: theme.$default-transition;
+      background-color: theme.$colors-surface-bg;
+      z-index: 20;
+
+      @include theme.animation(slide-right);
+
+      @include theme.mobile {
+        &:nth-child(even) {
+          filter: invert(1);
+          @include theme.animation(slide-left);
+        }
+      }
+
+      @include theme.tablet {
+        &:nth-child(even) {
+          filter: invert(1);
+          @include theme.animation(slide-left);
+        }
+      }
+
+      &:hover {
+        filter: invert(1);
+      }
+    }
+  }
+
+  &_Picture {
+    width: 600px;
+    border-radius: 2rem;
+    filter: grayscale(1);
+    transition: theme.$default-transition;
+
+    @include theme.animation(picture);
+
+    &:hover {
+      filter: grayscale(0.3);
+    }
+
+    @include theme.mobile {
+      display: none;
+    }
+
+    @include theme.tablet {
+      width: 350px;
+    }
+  }
+
+  &_Background {
+    position: absolute;
+    border: theme.$default-border;
+    border-radius: 2rem;
+    height: 70%;
+    aspect-ratio: 9/16;
+    left: -50%;
+    top: 10%;
+
+    @include theme.desktop {
+      top: -10%;
+      left: -10%;
+    }
+
+    @include theme.tablet {
+      aspect-ratio: 1;
+      top: 5%;
+    }
+
+    &:nth-child(2) {
+      top: 55%;
+      left: 20%;
+
+      @include theme.desktop {
+        top: 25%;
+        left: 35%;
+      }
+    }
+  }
 }

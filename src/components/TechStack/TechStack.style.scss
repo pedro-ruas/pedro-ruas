@@ -63,14 +63,14 @@ $icons: (
   &_Wrapper {
     display: flex;
     align-items: center;
-    padding: theme.$default-gap;
+    padding: theme.$default-spacing;
     justify-content: center;
 
     &:hover {
       .TechStack {
         &_Name {
           max-width: 100vw;
-          padding-left: calc(theme.$default-gap * 2);
+          padding-left: calc(theme.$default-spacing * 2);
         }
 
         &_Icon {

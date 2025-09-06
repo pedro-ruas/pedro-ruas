@@ -17,13 +17,13 @@ function Header() {
       <div className={getBEMClass({ b, e: "Wrapper" })}>
         <div className={getBEMClass({ b, e: "Logo" })}>Pedro Ruas</div>
         <nav className={getBEMClass({ b, e: "Nav" })}>
-          <a href="#About" className={getBEMClass({ b, e: "NavItem" })}>
+          <a href="#about" className={getBEMClass({ b, e: "NavItem" })}>
             {t("header.about")}
           </a>
-          <a href="#Experience" className={getBEMClass({ b, e: "NavItem" })}>
+          <a href="#experience" className={getBEMClass({ b, e: "NavItem" })}>
             {t("header.experience")}
           </a>
-          <a href="#Contact" className={getBEMClass({ b, e: "NavItem" })}>
+          <a href="#contact" className={getBEMClass({ b, e: "NavItem" })}>
             {t("header.contact")}
           </a>
         </nav>

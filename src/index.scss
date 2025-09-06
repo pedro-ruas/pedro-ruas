@@ -10,10 +10,11 @@
   font-weight: 400;
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 
   color-scheme: dark;
-  color: rgb(255, 255, 255);
-  background-color: #141414;
+  color: theme.$colors-text;
+  background-color: theme.$colors-bg;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
