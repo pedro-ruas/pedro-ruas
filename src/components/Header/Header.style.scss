@@ -12,10 +12,18 @@
     width: 100%;
     justify-content: space-between;
     max-width: theme.$page-max-width;
-    padding: 0 2 * theme.$default-spacing;
+    padding: 0 theme.$default-spacing;
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @include theme.tablet {
+      padding: 0 calc(1.5 * theme.$default-spacing);
+    }
+
+    @include theme.desktop {
+      padding: 0 calc(2 * theme.$default-spacing);
+    }
   }
 
   &_Nav {

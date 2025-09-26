@@ -1,6 +1,16 @@
 #root {
   max-width: theme.$page-max-width;
   margin: 0 auto;
-  padding: 0 2rem 3rem;
+  padding: 0 theme.$default-spacing calc(theme.$default-spacing * 3);
   width: 100%;
+
+  @include theme.tablet {
+    padding-left: calc(theme.$default-spacing * 1.5);
+    padding-right: calc(theme.$default-spacing * 1.5);
+  }
+
+  @include theme.desktop {
+    padding-left: calc(theme.$default-spacing * 2);
+    padding-right: calc(theme.$default-spacing * 2);
+  }
 }

@@ -11,47 +11,49 @@ function About() {
 
   return (
     <section id="about" className={getBEMClass({ b })}>
-      <div className={getBEMClass({ b, e: "Content" })}>
-        <div className={getBEMClass({b, e: "Background"})} />
-        <div className={getBEMClass({b, e: "Background"})} />
-        <div className={getBEMClass({ b, e: "Texts" })}>
-          <span className={getBEMClass({ b, e: "Title" })}>
-            {t("about.title")}
-          </span>
-          <article className={getBEMClass({ b, e: "Text" })}>
-            <p className={getBEMClass({ b, e: "Paragraph" })}>
-              {t("about.first_p")}
-            </p>
-            <p className={getBEMClass({ b, e: "Paragraph" })}>
-              {t("about.second_p")}
-            </p>
-            <p className={getBEMClass({ b, e: "Paragraph" })}>
-              {t("about.third_p")}
-            </p>
-          </article>
+      <div className={getBEMClass({ b, e: "Container" })}>
+        <div className={getBEMClass({ b, e: "Content" })}>
+          <div className={getBEMClass({ b, e: "Background" })} />
+          <div className={getBEMClass({ b, e: "Background" })} />
+          <div className={getBEMClass({ b, e: "Texts" })}>
+            <span className={getBEMClass({ b, e: "Title" })}>
+              {t("about.title")}
+            </span>
+            <article className={getBEMClass({ b, e: "Text" })}>
+              <p className={getBEMClass({ b, e: "Paragraph" })}>
+                {t("about.first_p")}
+              </p>
+              <p className={getBEMClass({ b, e: "Paragraph" })}>
+                {t("about.second_p")}
+              </p>
+              <p className={getBEMClass({ b, e: "Paragraph" })}>
+                {t("about.third_p")}
+              </p>
+            </article>
 
-          <div className={getBEMClass({ b, e: "Stack" })}>
-            {groups.map((title) => (
-              <article
-                className={getBEMClass({ b, e: "StackGroup" })}
-                key={title}
-              >
-                <span className={getBEMClass({ b, e: "StackTitle" })}>
-                  {t(`about.${title}`)}
-                </span>
-                <p className={getBEMClass({ b, e: "StackText" })}>
-                  {t(`about.${title}_text`)}
-                </p>
-              </article>
-            ))}
+            <div className={getBEMClass({ b, e: "Stack" })}>
+              {groups.map((title) => (
+                <article
+                  className={getBEMClass({ b, e: "StackGroup" })}
+                  key={title}
+                >
+                  <span className={getBEMClass({ b, e: "StackTitle" })}>
+                    {t(`about.${title}`)}
+                  </span>
+                  <p className={getBEMClass({ b, e: "StackText" })}>
+                    {t(`about.${title}_text`)}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <img
-          src="/src/assets/about-picture.jpg"
-          alt="Pedro picture"
-          className={getBEMClass({ b, e: "Picture" })}
-        />
+          <img
+            src="/src/assets/about-picture.jpg"
+            alt="Pedro picture"
+            className={getBEMClass({ b, e: "Picture" })}
+          />
+        </div>
       </div>
     </section>
   );

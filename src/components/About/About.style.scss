@@ -5,21 +5,26 @@
   }
 
   to {
-    transform: translate(10, 10);
+    transform: translate(0, 0);
     opacity: 1;
   }
 }
 
 .About {
-  position: absolute;
-  left: 0;
+  margin-bottom: 100vh;
   width: 100%;
-  background-color: theme.$colors-surface-bg;
-  box-shadow: 0 -1rem 1rem theme.$colors-surface-bg;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
+
+  &_Container {
+    z-index: 10;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    left: 0;
+    justify-content: center;
+    box-shadow: 0 -1rem 1rem theme.$colors-surface-bg;
+    background-color: theme.$colors-surface-bg;
+    position: absolute;
+  }
 
   &_Content {
     width: 100%;
@@ -35,11 +40,12 @@
     @include theme.tablet {
       flex-direction: row;
       align-items: flex-start;
+      padding: calc(1.5 * theme.$default-spacing);
     }
 
     @include theme.desktop {
       flex-direction: row;
-      padding: calc(3 * theme.$default-spacing) 0;
+      padding: calc(2 * theme.$default-spacing);
       align-items: flex-start;
       justify-content: space-between;
     }
@@ -52,7 +58,8 @@
   }
 
   &_Title {
-    @extend %h2-text;
+    @extend %title;
+    z-index: 20;
   }
 
   &_Text {
@@ -110,7 +117,7 @@
   }
 
   &_Picture {
-    width: 600px;
+    width: 35rem;
     border-radius: 2rem;
     filter: grayscale(1);
     transition: theme.$default-transition;
@@ -126,7 +133,7 @@
     }
 
     @include theme.tablet {
-      width: 350px;
+      width: 22rem;
     }
   }
 
@@ -136,8 +143,8 @@
     border-radius: 2rem;
     height: 70%;
     aspect-ratio: 9/16;
-    left: -50%;
-    top: 10%;
+    left: -30%;
+    top: 8%;
 
     @include theme.desktop {
       top: -10%;
@@ -145,8 +152,8 @@
     }
 
     @include theme.tablet {
-      aspect-ratio: 1;
-      top: 5%;
+      aspect-ratio: 1.25;
+      left: -50%;
     }
 
     &:nth-child(2) {

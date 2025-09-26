@@ -1,4 +1,6 @@
 @use "./variables" as variables;
+@use "./typography";
+@use "./colors" as colors;
 
 %skeleton {
   animation: 1s linear infinite alternate skeleton-glow;
@@ -24,4 +26,19 @@
 
 .Loading {
   @extend %skeleton;
+}
+
+%title {
+  @extend %h2-text;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+
+  &::before {
+    width: 1.5rem;
+    height: 0.15rem;
+    background-color: colors.$colors-text;
+    border-radius: 1rem;
+    content: "";
+  }
 }

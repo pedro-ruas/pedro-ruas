@@ -1,0 +1,262 @@
+@use "sass:color";
+
+%card-topic {
+  @extend %body-text;
+  color: theme.$colors-accent;
+  text-transform: capitalize;
+}
+
+%timeline-fading {
+  content: "";
+  position: absolute;
+  height: 20%;
+  width: 3rem;
+  background: linear-gradient(transparent 0%, theme.$colors-surface-bg 90%);
+}
+
+.Experience {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: calc(3 * theme.$default-spacing);
+  gap: calc(1.25 * theme.$default-spacing);
+
+  @include theme.desktop {
+    gap: calc(3 * theme.$default-spacing);
+  }
+
+  &_Content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: calc(3.5 * theme.$default-spacing);
+
+    @include theme.tablet {
+      padding-bottom: calc(1.5 * theme.$default-spacing);
+    }
+
+    @include theme.desktop {
+      gap: calc(3.5 * theme.$default-spacing);
+      padding-bottom: calc(3.5 * theme.$default-spacing);
+    }
+  }
+
+  &_Timeline {
+    position: absolute;
+    background-color: theme.$colors-accent;
+    border-radius: 1rem;
+    width: 0.5rem;
+    height: 100%;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-isReversed {
+      &::before {
+        @extend %timeline-fading;
+        top: 0;
+        transform: rotate(180deg);
+      }
+    }
+
+    &:not(.Experience_Timeline-isReversed) {
+      &::after {
+        @extend %timeline-fading;
+        bottom: 0;
+      }
+    }
+
+    @include theme.mobile {
+      display: none;
+    }
+
+    @include theme.desktop {
+      align-self: center;
+    }
+  }
+
+  &_Title {
+    @extend %title;
+  }
+
+  &_TitleWrapper {
+    display: flex;
+    gap: theme.$default-spacing;
+    flex-direction: column;
+
+    @include theme.mobile {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &_OrderButton {
+    width: fit-content;
+  }
+}
+
+.Job {
+  position: relative;
+  width: 100%;
+  transition: theme.$default-transition;
+  transform: translate(0, 0);
+  opacity: 1;
+
+  &-Hidden {
+    opacity: 0;
+    transform: translate(0, 20%);
+  }
+
+  @include theme.tablet {
+    max-width: 35rem;
+  }
+
+  @include theme.desktop {
+    max-width: 35rem;
+    align-self: flex-start;
+
+    &:nth-child(even) {
+      align-self: flex-end;
+    }
+  }
+
+  &_Card {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1.5 * theme.$default-spacing);
+    justify-content: space-between;
+    min-height: fit-content;
+    border-radius: 2rem;
+    padding: calc(1.25 * theme.$default-spacing);
+    background-color: theme.$colors-bg;
+    transition: theme.$default-transition;
+    z-index: 20;
+
+    @include theme.desktop {
+      padding: calc(2 * theme.$default-spacing);
+    }
+
+    &:hover {
+      background-color: theme.$colors-surface-bg;
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 1em theme.$colors-gray-dark-4);
+    }
+  }
+
+  &_CardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.25 * theme.$default-spacing);
+  }
+
+  &_Title {
+    @extend %h3-text;
+  }
+
+  &_Company {
+    @extend %h4-text;
+    color: theme.$colors-accent;
+  }
+
+  &_Info {
+    display: flex;
+    align-items: center;
+    gap: theme.$default-spacing;
+    @extend %small-text;
+  }
+
+  &_InfoItem {
+    display: flex;
+    align-items: center;
+
+    &:first-child::after {
+      content: "";
+      width: 1rem;
+      height: 0.15rem;
+      border-radius: 1rem;
+      margin-left: theme.$default-spacing;
+      background-color: theme.$colors-text;
+    }
+  }
+
+  &_Intro {
+    @extend %body-text;
+  }
+
+  &_Description {
+    display: flex;
+    flex-direction: column;
+
+    &Title {
+      @extend %card-topic;
+    }
+
+    &List {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      gap: 1rem;
+    }
+
+    &Item {
+      display: flex;
+      position: relative;
+      padding-left: theme.$default-spacing;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 10px;
+        content: "";
+        background-color: theme.$colors-accent;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &_CardFooter {
+    display: flex;
+    flex-direction: column;
+    gap: theme.$default-spacing;
+  }
+
+  &_FooterTitle {
+    @extend %card-topic;
+  }
+
+  &_Stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: theme.$default-spacing;
+
+    &Item {
+      padding: calc(0.5 * theme.$default-spacing);
+      border: 1px solid theme.$colors-accent;
+      border-radius: 0.75rem;
+      color: theme.$colors-accent;
+      background-color: color.adjust(
+        $color: theme.$colors-accent,
+        $hue: 0,
+        $saturation: -10%,
+        $lightness: -20%,
+        $alpha: -0.8
+      );
+      transition: theme.$default-transition;
+
+      &:hover {
+        background-color: color.adjust(
+          $color: theme.$colors-accent,
+          $hue: 0,
+          $saturation: -5%,
+          $lightness: -5%,
+          $alpha: -0.6
+        );
+      }
+    }
+  }
+}

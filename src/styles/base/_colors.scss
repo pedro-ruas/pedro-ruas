@@ -1,7 +1,4 @@
-// neutral colors
-$colors-shadow: #17203166;
-
-//light theme
+//light colors
 $colors-white-light-1: #ffffff;
 $colors-white-light-2: #fafbfc;
 $colors-gray-light-1: #e2e6e9;
@@ -9,7 +6,7 @@ $colors-gray-light-2: #b4bdc3;
 $colors-gray-light-3: #89939a;
 $colors-black-light: #0f0f11;
 
-// dark theme
+// dark colors
 $colors-white-dark: #f1f2f9;
 $colors-gray-dark-1: #75767f;
 $colors-gray-dark-2: #4a4d58;
@@ -20,7 +17,10 @@ $colors-black-dark: #020202;
 
 // ------------------------------------ //
 
+//usage colors
 $colors-text: $colors-white-dark;
 $colors-bg: $colors-black-light;
 $colors-surface-bg: $colors-black-dark;
 $colors-details: $colors-gray-light-3;
+$colors-accent: #27d16e;
+$colors-shadow: $colors-gray-dark-4;

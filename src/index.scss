@@ -14,7 +14,7 @@
 
   color-scheme: dark;
   color: theme.$colors-text;
-  background-color: theme.$colors-bg;
+  background-color: theme.$colors-surface-bg;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,12 +26,10 @@ body {
   margin: 0;
   display: flex;
   width: 100%;
-  min-width: 320px;
   min-height: 100vh;
   overflow-x: clip;
   justify-content: center;
 }
-
 
 button {
   border-radius: 8px;
@@ -40,12 +38,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: theme.$colors-bg;
   cursor: pointer;
   transition: border-color 0.25s;
 
   &:hover {
-    border-color: #646cff;
+    border-color: theme.$colors-accent;
   }
 
   &:focus,

@@ -1,7 +1,7 @@
 export enum Languages {
-  EN_US = "en",
-  PT_BR = "pt",
-  ES_ES = "es",
+  EN_US = "en-US",
+  PT_BR = "pt-BR",
+  ES_ES = "es-ES",
 }
 
 type TranslationObj = {
