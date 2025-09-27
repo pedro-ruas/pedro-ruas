@@ -95,9 +95,9 @@ function Experience() {
   return (
     <section id="experience" className={getBEMClass({ b })}>
       <div className={getBEMClass({ b, e: "TitleWrapper" })}>
-        <div className={getBEMClass({ b, e: "Title" })}>
+        <h3 className={getBEMClass({ b, e: "Title" })}>
           {t("experience.title")}
-        </div>
+        </h3>
         <button
           className={getBEMClass({ b, e: "OrderButton" })}
           onClick={handleReverseOrder}

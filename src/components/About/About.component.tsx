@@ -16,9 +16,9 @@ function About() {
           <div className={getBEMClass({ b, e: "Background" })} />
           <div className={getBEMClass({ b, e: "Background" })} />
           <div className={getBEMClass({ b, e: "Texts" })}>
-            <span className={getBEMClass({ b, e: "Title" })}>
+            <h3 className={getBEMClass({ b, e: "Title" })}>
               {t("about.title")}
-            </span>
+            </h3>
             <article className={getBEMClass({ b, e: "Text" })}>
               <p className={getBEMClass({ b, e: "Paragraph" })}>
                 {t("about.first_p")}

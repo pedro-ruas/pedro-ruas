@@ -5,6 +5,7 @@ import { headerTranslation } from "./components/Header/Header.i18n";
 import { heroTranslation } from "./components/Hero/Hero.i18n";
 import { aboutTranslation } from "./components/About/About.i18n";
 import { experienceTranslation } from "./components/Experience/Experience.i18n";
+import { contactTranslation } from "./components/Contact/Contact.i18n";
 
 function getResources(...translations: Translation[]): Resource {
   const initialResources = Object.values(Languages).reduce(
@@ -36,7 +37,8 @@ const resources = getResources(
   headerTranslation,
   heroTranslation,
   aboutTranslation,
-  experienceTranslation
+  experienceTranslation,
+  contactTranslation
 );
 
 i18next.use(initReactI18next).init({
