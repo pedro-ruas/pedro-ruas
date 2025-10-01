@@ -56,7 +56,7 @@ function About() {
           </div>
 
           <img
-            src="/src/assets/about-picture.jpg"
+            src="/assets/about-picture.jpg"
             alt="Pedro picture"
             className={getBEMClass({ b, e: "Picture" })}
           />

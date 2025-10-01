@@ -48,7 +48,7 @@ function Header() {
     >
       <div className={getBEMClass({ b, e: "Wrapper" })}>
         <img
-          src="/src/assets/logo.svg"
+          src="/assets/logo.svg"
           className={getBEMClass({ b, e: "Logo" })}
         />
         <nav className={getBEMClass({ b, e: "Nav" })}>

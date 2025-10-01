@@ -41,7 +41,7 @@ export function LanguageOption({
     >
       <img
         className={getBEMClass({ b, e: "OptionIcon" })}
-        src={`/src/assets/flags/${language}.svg`}
+        src={`/assets/flags/${language}.svg`}
       />
       <span className={getBEMClass({ b, e: "OptionLabel" })}>
         {languageOptions[language]}
