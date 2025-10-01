@@ -1,4 +1,5 @@
-import { getBEMClass } from "../../utils/getBEMClass.util";
+import { useInView } from "../../hooks/use-in-view.hook";
+import { getBEMClass } from "../../utils/get-bem-class.util";
 import "./About.style.scss";
 import { useTranslation } from "react-i18next";
 
@@ -8,10 +9,16 @@ const groups: string[] = ["code", "devops", "communication"];
 
 function About() {
   const { t } = useTranslation();
+  const { viewWindowRef, isInView } = useInView();
 
   return (
-    <section id="about" className={getBEMClass({ b })}>
-      <div className={getBEMClass({ b, e: "Container" })}>
+    <section
+      id="about"
+      className={getBEMClass({ b })}
+    >
+      <div
+      ref={viewWindowRef}
+      className={getBEMClass({ b, e: "Container", m: { isHidden: !isInView } })}>
         <div className={getBEMClass({ b, e: "Content" })}>
           <div className={getBEMClass({ b, e: "Background" })} />
           <div className={getBEMClass({ b, e: "Background" })} />

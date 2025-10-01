@@ -1,0 +1,80 @@
+$arrow-width: 10rem;
+
+@keyframes arrow {
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+
+.MoreArrow {
+  position: fixed;
+  display: flex;
+  bottom: 2rem;
+  left: calc(50vw - $arrow-width / 2);
+  background-color: transparent;
+  border-radius: 4rem;
+  align-items: center;
+  justify-content: center;
+  transition: theme.$default-transition;
+  height: 6rem;
+  width: $arrow-width;
+  cursor: pointer;
+  border-color: transparent;
+  animation: arrow 1s ease-in-out infinite;
+  z-index: 90;
+  opacity: 1;
+
+  &-isHidden {
+    bottom: -20vh;
+    opacity: 0;
+  }
+
+  &:hover {
+    transform: scale(1.15);
+    animation: none;
+
+    .MoreArrow_Arrow {
+      &::after,
+      &::before {
+        background-color: theme.$colors-accent;
+        filter: drop-shadow(0 0 1em theme.$colors-accent);
+      }
+    }
+  }
+
+  &_Arrow {
+    display: flex;
+    position: absolute;
+
+    &::after,
+    &::before {
+      content: "";
+      height: 0.5rem;
+      width: 3.15rem;
+      background-color: theme.$colors-accent;
+      position: absolute;
+      border-radius: 1rem;
+      transform-origin: 0;
+      transition: theme.$default-transition;
+    }
+
+    &::after {
+      transform: rotate(-30deg) translateX(-0.25rem);
+    }
+
+    &::before {
+      transform: rotate(-150deg) translateX(-0.25rem);
+    }
+  }
+}

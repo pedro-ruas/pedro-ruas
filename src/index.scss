@@ -5,7 +5,7 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   max-width: 100vw;
@@ -20,6 +20,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &:has(.Menu-isOpen) {
+    overflow-y: hidden;
+  }
 }
 
 body {
@@ -29,25 +33,4 @@ body {
   min-height: 100vh;
   overflow-x: clip;
   justify-content: center;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: theme.$colors-bg;
-  cursor: pointer;
-  transition: border-color 0.25s;
-
-  &:hover {
-    border-color: theme.$colors-accent;
-  }
-
-  &:focus,
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
 }

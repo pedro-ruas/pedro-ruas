@@ -1,15 +1,6 @@
-import { Languages } from "../../types/translation.type";
-import { experienceTranslation } from "./Experience.i18n";
-
-export type ExperienceObj = {
-  key: string;
-  title: string;
-  company: string;
-  highlightCount: number;
-  startDate: string;
-  endDate?: string;
-  stack?: string[];
-};
+import { Languages } from "../types/translation.type";
+import { experienceTranslation } from "../components/Experience/Experience.i18n";
+import type { Experience } from "../types/experience.type";
 
 const getHighlightsCount = (key: string): number => {
   return Object.keys(experienceTranslation[Languages.EN_US][key] ?? {}).filter(
@@ -17,7 +8,7 @@ const getHighlightsCount = (key: string): number => {
   ).length;
 };
 
-export const experiences: ExperienceObj[] = [
+export const experiences: Experience[] = [
   {
     key: "santander",
     title: "Full Stack Developer",

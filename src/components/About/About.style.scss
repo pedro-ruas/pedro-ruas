@@ -1,15 +1,3 @@
-@keyframes picture {
-  from {
-    transform: translate(10%, 10%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
-
 .About {
   margin-bottom: 100vh;
   width: 100%;
@@ -90,23 +78,21 @@
       border: theme.$default-border;
       border-radius: 2rem;
       padding: calc(1.5 * theme.$default-spacing);
-      transition: theme.$default-transition;
+      transition: theme.$default-transition, opacity 1s, transform 1s;
+      transform: translateX(0);
+      opacity: 1;
       background-color: theme.$colors-surface-bg;
       z-index: 20;
-
-      @include theme.animation(slide-right);
 
       @include theme.mobile {
         &:nth-child(even) {
           filter: invert(1);
-          @include theme.animation(slide-left);
         }
       }
 
       @include theme.tablet {
         &:nth-child(even) {
           filter: invert(1);
-          @include theme.animation(slide-left);
         }
       }
 
@@ -120,9 +106,9 @@
     width: 35rem;
     border-radius: 2rem;
     filter: grayscale(1);
-    transition: theme.$default-transition;
-
-    @include theme.animation(picture);
+    transition: theme.$default-transition, opacity 1s, transform 1s;
+    transform: translate(0, 0);
+    opacity: 1;
 
     &:hover {
       filter: grayscale(0.3);
@@ -164,6 +150,30 @@
         top: 25%;
         left: 35%;
       }
+    }
+  }
+
+  &_Container-isHidden {
+    .About_StackGroup {
+      transform: translateX(-100%);
+      opacity: 0;
+
+      @include theme.mobile {
+        &:nth-child(even) {
+          transform: translateX(100%);
+        }
+      }
+
+      @include theme.tablet {
+        &:nth-child(even) {
+          transform: translateX(100%);
+        }
+      }
+    }
+
+    .About_Picture {
+      transform: translate(10%, 10%);
+      opacity: 0;
     }
   }
 }

@@ -4,9 +4,9 @@ import {
   useState,
   type PropsWithChildren,
 } from "react";
-import { Languages } from "../types/translation.type";
+import { Languages } from "../../types/translation.type";
 import { useTranslation } from "react-i18next";
-import { LanguageContext } from "./contexts";
+import { LanguageContext } from "./language.contexts";
 
 function getLanguage(): Languages {
   const lang = navigator.language;

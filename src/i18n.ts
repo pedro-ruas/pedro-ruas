@@ -6,6 +6,7 @@ import { heroTranslation } from "./components/Hero/Hero.i18n";
 import { aboutTranslation } from "./components/About/About.i18n";
 import { experienceTranslation } from "./components/Experience/Experience.i18n";
 import { contactTranslation } from "./components/Contact/Contact.i18n";
+import { menuTranslation } from "./components/Menu/Menu.i18n";
 
 function getResources(...translations: Translation[]): Resource {
   const initialResources = Object.values(Languages).reduce(
@@ -38,12 +39,13 @@ const resources = getResources(
   heroTranslation,
   aboutTranslation,
   experienceTranslation,
-  contactTranslation
+  contactTranslation,
+  menuTranslation
 );
 
 i18next.use(initReactI18next).init({
   debug: true,
-  fallbackLng: "en",
+  fallbackLng: "en-US",
   resources,
 });
 

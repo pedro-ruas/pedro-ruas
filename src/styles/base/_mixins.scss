@@ -1,4 +1,6 @@
 @use "./breakpoints" as breakpoints;
+@use "sass:list";
+@use "sass:math";
 
 @mixin mobile {
   @media only screen and (max-width: calc(breakpoints.$tablet-breakpoint - 1px)) {
@@ -16,4 +18,21 @@
   @media only screen and (min-width: breakpoints.$desktop-breakpoint) {
     @content;
   }
+}
+
+@mixin multi-color-bg($colors) {
+  $color-count: list.length($colors);
+  $segment-size: math.div(100%, $color-count);
+  $gradient-list: ();
+
+  @for $i from 1 through $color-count {
+    $color: list.nth($colors, $i);
+    $start: ($i - 1) * $segment-size;
+    $end: $i * $segment-size;
+
+    $gradient-list: list.append($gradient-list, $color $start, comma);
+    $gradient-list: list.append($gradient-list, $color $end, comma);
+  }
+
+  background-image: linear-gradient(to right, $gradient-list);
 }

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { techStack } from "../../types/tech-stack.type";
-import { getBEMClass } from "../../utils/getBEMClass.util";
+import { getBEMClass } from "../../utils/get-bem-class.util";
 import "./TechStack.style.scss";
 
 interface Props {

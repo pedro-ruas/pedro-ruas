@@ -1,24 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { getBEMClass } from "../../utils/getBEMClass.util";
+import { getBEMClass } from "../../utils/get-bem-class.util";
 import "./Contact.style.scss";
+import { contacts } from "../../data/contacts.data";
 
 const b = "Contact";
-
-type Contact = {
-  text: string;
-  url: string;
-};
-
-const contacts: Contact[] = [
-  {
-    text: "LinkedIn",
-    url: "https://linkedin.com/in/pedro-janelli-da-silva-ruas",
-  },
-  { text: "GitHub", url: "https://github.com/pedro-ruas" },
-  { text: "Email", url: "mailto:pjruas.dev@gmail.com" },
-  { text: "Telegram", url: "https://t.me/pedro_ruas" },
-  { text: "Whatsapp", url: "https://wa.me/5553991078457" },
-];
 
 function Contact() {
   const { t } = useTranslation();

@@ -94,6 +94,7 @@
   }
 
   &_OrderButton {
+    @extend %button;
     width: fit-content;
   }
 }

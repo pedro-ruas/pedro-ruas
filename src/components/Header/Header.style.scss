@@ -1,67 +1,149 @@
 .Header {
   display: flex;
-  position: absolute;
+  position: fixed;
   left: 0;
   width: 100%;
   justify-content: center;
-  background: black;
-  box-shadow: 0 1.5rem 2rem black;
-  z-index: 10;
+  background: theme.$colors-surface-bg;
+  transition: theme.$default-transition;
+  height: fit-content;
+  max-height: 20vh;
+  z-index: 50;
+
+  &-isHidden {
+    max-height: 0;
+
+    &::after {
+      max-height: 0;
+    }
+
+    .Header_Wrapper {
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3rem;
+    top: 100%;
+    background: linear-gradient(theme.$colors-surface-bg, transparent);
+    transition: theme.$default-transition;
+  }
 
   &_Wrapper {
     width: 100%;
     justify-content: space-between;
     max-width: theme.$page-max-width;
-    padding: 0 theme.$default-spacing;
+    padding: calc(1.5 * theme.$default-spacing) theme.$default-spacing;
     display: flex;
     flex-direction: row;
     align-items: center;
+    max-height: 100%;
+    transition: theme.$default-transition;
 
     @include theme.tablet {
-      padding: 0 calc(1.5 * theme.$default-spacing);
+      padding: calc(1.5 * theme.$default-spacing);
     }
 
     @include theme.desktop {
-      padding: 0 calc(2 * theme.$default-spacing);
+      padding: calc(1.5 * theme.$default-spacing)
+        calc(2 * theme.$default-spacing);
     }
+  }
+
+  &_Logo {
+    width: 5%;
+    min-width: 3rem;
+    max-height: 100%;
   }
 
   &_Nav {
     display: flex;
     align-items: center;
     height: 5rem;
-    gap: 3 * theme.$default-spacing;
+    gap: calc(2 * theme.$default-spacing);
+
+    @include theme.desktop {
+      gap: calc(3 * theme.$default-spacing);
+    }
+
+    @include theme.mobile {
+      display: none;
+    }
   }
 
   &_NavItem {
+    @extend %h4-text;
     position: relative;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    transition: background 300ms ease-in-out;
+    transition: theme.$default-transition;
     border-radius: 1rem;
     text-decoration: none;
     text-transform: capitalize;
-    color: white;
-    @extend %h4-text;
+    color: theme.$colors-text;
 
     &::after {
+      content: "";
       position: absolute;
       bottom: 25%;
-      content: "";
-      background-color: white;
+      background-color: theme.$colors-text;
       transition: theme.$default-transition;
       height: 4px;
       padding: 0 0;
       border-radius: 4px;
     }
 
-    &:hover {
+    &:hover,
+    &-isSelected {
       &::after {
         padding: 0 45%;
       }
+    }
+  }
+
+  &_Menu {
+    position: relative;
+    width: 1.5rem;
+    height: 0.15rem;
+    background-color: theme.$colors-text;
+    display: none;
+    border-radius: 1rem;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0.15rem;
+      background-color: theme.$colors-text;
+      border-radius: 1rem;
+    }
+
+    &::before {
+      top: -0.6rem;
+    }
+
+    &::after {
+      bottom: -0.6rem;
+    }
+
+    @include theme.mobile {
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
+    }
+  }
+
+  .Language {
+    @include theme.mobile {
+      display: none;
     }
   }
 }

@@ -1,14 +1,15 @@
-import { getBEMClass } from "../../utils/getBEMClass.util";
-import { experiences, type ExperienceObj } from "./experiences";
+import { getBEMClass } from "../../utils/get-bem-class.util";
+import { experiences } from "../../data/experiences.data";
 import "./Experience.style.scss";
 import { techStack } from "../../types/tech-stack.type";
 import { use, useState } from "react";
-import { LanguageContext } from "../../store/contexts";
+import { LanguageContext } from "../../store/language/language.contexts";
 import { useInView } from "../../hooks/use-in-view.hook";
+import { type Experience as ExperienceType } from "../../types/experience.type";
 
 const b = "Experience";
 
-function Job({ experience }: { experience: ExperienceObj }) {
+function Job({ experience }: { experience: ExperienceType }) {
   const { t, language } = use(LanguageContext);
   const { viewWindowRef, isInView } = useInView();
 

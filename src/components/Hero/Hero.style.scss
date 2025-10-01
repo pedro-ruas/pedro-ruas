@@ -1,21 +1,21 @@
-$picture-size: 700px;
+$picture-size: 37.5rem;
 
 @keyframes upper-title {
   0% {
     clip-path: polygon(100% 0, 100% 0, 75% 100%, 75% 100%);
-    color: black;
-    background-color: black;
+    color: theme.$colors-surface-bg;
+    background-color: theme.$colors-surface-bg;
   }
 
   25% {
     clip-path: polygon(50% 0, 75% 0, 50% 100%, 25% 100%);
-    background-color: white;
+    background-color: theme.$colors-text;
   }
 
   75% {
     clip-path: polygon(25% 0, 25% 0, 0 100%, 0 100%);
-    color: white;
-    background-color: black;
+    color: theme.$colors-text;
+    background-color: theme.$colors-surface-bg;
   }
 
   100% {
@@ -26,19 +26,19 @@ $picture-size: 700px;
 @keyframes lower-title {
   0% {
     clip-path: polygon(0 0, 0 0, 0% 100%, 0% 100%);
-    color: white;
-    background-color: white;
+    color: theme.$colors-text;
+    background-color: theme.$colors-text;
   }
 
   25% {
     clip-path: polygon(25% 0, 50% 0, 25% 100%, 0% 100%);
-    background-color: black;
+    background-color: theme.$colors-surface-bg;
   }
 
   75% {
     clip-path: polygon(100% 0, 100% 0, 75% 100%, 75% 100%);
-    color: black;
-    background-color: white;
+    color: theme.$colors-surface-bg;
+    background-color: theme.$colors-text;
   }
 
   100% {
@@ -138,7 +138,7 @@ $picture-size: 700px;
 
     &Background {
       position: absolute;
-      background-color: black;
+      background-color: theme.$colors-surface-bg;
       width: 100%;
       height: calc(100% / 1.6);
       clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
@@ -166,9 +166,13 @@ $picture-size: 700px;
     border-radius: 40%;
     top: 25%;
 
+    @include theme.tablet {
+      height: calc($picture-size * 3 / 4);
+    }
+
     @include theme.desktop {
       height: $picture-size;
-      left: calc(50% - $picture-size * 3 / 4);
+      left: calc(50% - $picture-size);
       top: unset;
       z-index: 20;
     }
@@ -183,7 +187,8 @@ $picture-size: 700px;
     animation-name: intro;
 
     @include theme.desktop {
-      font-size: 92px;
+      font-size: 74px;
+      line-height: 92px;
     }
   }
 
@@ -203,11 +208,15 @@ $picture-size: 700px;
   }
 
   &_Title {
+    @extend %h1-text;
     display: flex;
     flex-direction: column;
     height: 100%;
-    @extend %h1-text;
     justify-content: center;
+
+    @include theme.tablet {
+      max-width: 100%;
+    }
 
     &-reverse {
       flex-direction: column-reverse;
@@ -222,8 +231,8 @@ $picture-size: 700px;
 
       &-higher {
         .Hero_TitleText {
-          color: white;
-          background-color: black;
+          color: theme.$colors-text;
+          background-color: theme.$colors-surface-bg;
           animation-name: upper-title;
           clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
           border-radius: 0 1rem 0 0;
@@ -232,8 +241,8 @@ $picture-size: 700px;
 
       &-lower {
         .Hero_TitleText {
-          color: black;
-          background-color: white;
+          color: theme.$colors-surface-bg;
+          background-color: theme.$colors-text;
           animation-name: lower-title;
           clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
           border-radius: 0 0 0 1rem;
@@ -243,7 +252,7 @@ $picture-size: 700px;
 
     &Text {
       width: 100%;
-      padding: 2 * theme.$default-spacing 8 * theme.$default-spacing;
+      padding: calc(2 * theme.$default-spacing) calc(8 * theme.$default-spacing);
       animation-timing-function: ease-in-out;
       animation-duration: 1.5s;
       animation-iteration-count: 1;
@@ -266,5 +275,15 @@ $picture-size: 700px;
     top: 0;
     left: 0;
     background-color: theme.$colors-bg;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4rem;
+      bottom: 0;
+      z-index: 30;
+      background: linear-gradient(transparent, theme.$colors-surface-bg);
+    }
   }
 }

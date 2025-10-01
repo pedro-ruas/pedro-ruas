@@ -1,8 +1,8 @@
 import "./Hero.style.scss";
-import { getBEMClass } from "../../utils/getBEMClass.util";
+import { getBEMClass } from "../../utils/get-bem-class.util";
 import TechStack from "../TechStack/TechStack.component";
 import { use, useEffect, useRef, useState } from "react";
-import { LanguageContext } from "../../store/contexts";
+import { LanguageContext } from "../../store/language/language.contexts";
 import { Languages } from "../../types/translation.type";
 import { techStack } from "../../types/tech-stack.type";
 

@@ -1,0 +1,140 @@
+@use "sass:color";
+
+$flag-bgs: (
+  "pt-BR": (
+    #009b3a,
+    #fedf01,
+    #002776,
+    #fedf01,
+    #009b3a,
+  ),
+  "es-ES": (
+    #c60a1d,
+    #ffc400,
+    #c60a1d,
+  ),
+  "en-US": (
+    #eeeeee,
+    #cf1b2b,
+    #00247d,
+    #cf1b2b,
+    #00247d,
+    #cf1b2b,
+    #eeeeee,
+  ),
+);
+
+.Language {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_Button {
+    @extend %button;
+    text-transform: capitalize;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+    padding: calc(0.75 * theme.$default-spacing);
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      .Language_ButtonText,
+      &::after {
+        border-color: theme.$colors-accent;
+      }
+    }
+
+    @each $flag, $colors in $flag-bgs {
+      &-#{$flag} {
+        &::after {
+          @include theme.multi-color-bg($colors);
+          content: "";
+          width: 100%;
+          height: 0.25rem;
+          position: absolute;
+          top: 100%;
+          margin-top: 0.25rem;
+          left: 0;
+          border-radius: 1rem;
+          border: 1px solid transparent;
+          transition: theme.$default-transition;
+        }
+      }
+    }
+  }
+
+  &_OptionsContainer {
+    position: absolute;
+    top: 100%;
+    margin-top: calc(0.5 * theme.$default-spacing);
+    width: max-content;
+    overflow: hidden;
+    height: fit-content;
+    max-height: 0;
+    transition: theme.$default-transition;
+    border-radius: 0.75rem;
+    z-index: 90;
+
+    &-isOpen {
+      max-height: 30vh;
+
+      &:hover {
+        background-color: theme.$colors-surface-bg;
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 1em theme.$colors-gray-dark-4);
+      }
+    }
+  }
+
+  &_OptionsHolder {
+    background-color: theme.$colors-bg;
+    width: 100%;
+    padding: calc(0.5 * theme.$default-spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(0.5 * theme.$default-spacing);
+    border: 1px solid transparent;
+    position: relative;
+    transition: theme.$default-transition;
+
+    &:hover {
+      background-color: theme.$colors-surface-bg;
+    }
+  }
+
+  &_Option {
+    display: flex;
+    align-items: center;
+    gap: calc(theme.$default-spacing);
+    width: 100%;
+    cursor: pointer;
+    padding: calc(0.5 * theme.$default-spacing);
+    border-radius: 0.5rem;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    transition: theme.$default-transition;
+
+    &:hover,
+    &:focus {
+      color: theme.$colors-accent;
+      background-color: color.adjust(
+        $color: theme.$colors-accent,
+        $hue: 0,
+        $saturation: -10%,
+        $lightness: -20%,
+        $alpha: -0.8
+      );
+      border-color: theme.$colors-accent;
+    }
+  }
+
+  &_OptionIcon {
+    width: 2.5rem;
+  }
+}
